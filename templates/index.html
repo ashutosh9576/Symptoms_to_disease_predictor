@@ -1,0 +1,708 @@
+ <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Welocme Home</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-primary">
+    <a href="{% url 'index' %}"><button type="button" class="btn btn-success">Home</button></a>
+    </nav>
+    <div class="jumbotron">
+        <div class="alert alert-danger" role="alert"><h1>Welcome To Home Page!</h1></div>
+    </div>
+    <div class="alert alert-primary" role="alert"><div class="container"><h2>Choose your symptoms carefully!</h2></div></div>
+  <div class="container">
+   <form method="POST" action="result">
+     {% csrf_token %}
+
+<!-- MUltiple input -->
+<select name="s1" class="custom-select custom-select-lg mb-3">
+  <option selected>Open this select menu</option>
+    <option>Itching</option>
+    <option>Skin Rash</option>
+    <option>Nodal Skin Eruptions</option>
+    <option>Continuous Sneezing</option>
+    <option>Shivering</option>
+    <option>Chills</option>
+    <option>Joint Pain</option>
+    <option>Stomach Pain</option>
+    <option>Acidity</option>
+    <option>Ulcers On Tongue</option>
+    <option>Muscle Wasting</option>
+    <option>Vomiting</option>
+    <option>Burning Micturution</option>
+    <option>Spotting Urination</option>
+    <option>Fatigue</option>
+    <option>Weight Gain</option>
+    <option>Anxiety</option>
+    <option>Cold Hands and Feets</option>
+    <option>Mood Swings</option>
+    <option>Weight Loss</option>
+    <option>RestlessNess</option>
+    <option>Lethargy</option>
+    <option>Pathes In Throat</option>
+    <option>Irregular Sugar Level</option>
+    <option>Cough</option>
+    <option>High Fever</option>
+    <option>Sunken Eyes</option>
+    <option>Breathelessness</option>
+    <option>Sweating</option>
+    <option>Dehydration</option>
+    <option>Indigestion</option>
+    <option>Headache</option>
+    <option>Yellowish Skin</option>
+    <option>Dark Skin</option>
+    <option>Nausea</option>
+    <option>Loss of Apetite</option>
+    <option>Pain Behind the Eyes</option>
+    <option>Abnormal Menstruation</option>
+    <option>Back Pain</option>
+    <option>Constipation</option>
+    <option>Abdominal Pain</option>
+    <option>Diarrhoea</option>
+    <option>Mild Fever</option>
+    <option>Yellow Urine</option>
+    <option>Yellowing of Eyes</option>
+    <option>Acute Liver Failure</option>
+    <option>Fluid Overload</option>
+    <option>Swelling of Stomach</option>
+    <option>Swelled Lymph Nodes</option>
+    <option>Malaise</option>
+    <option>Blurred and Distorted Vision</option>
+    <option>Phlegm</option>
+    <option>Throat Irritation</option>
+    <option>Redness Of Eyes</option>
+    <option>Sinus Pressure</option>
+    <option>Runny Nose</option>
+    <option>Congestion</option>
+    <option>Chest Pain</option>
+    <option>Weakness in Limbs</option>
+    <option>Fast Heart Rate</option>
+    <option>Pain During Bowel Movements</option>
+    <option>Pain in Anal Region</option>
+    <option>Bloody Stool</option>
+    <option>Irritation In Anus</option>
+    <option>Neck Pain</option>
+    <option>Dizziness</option>
+    <option>Cramps</option>
+    <option>Bruising</option>
+    <option>Obesity</option>
+    <option>Swollen Legs</option>
+    <option>Swollen Blood Vessels</option>
+    <option>Puffy Face and Eyes</option>
+    <option>Enlarged Thyroid</option>
+    <option>Brittle Nails</option>
+    <option>Swollen Extremeties</option>
+    <option>Excessive Hunger</option>
+    <option>Extra Marital Contacts</option>
+    <option>Drying and Tingling Lips</option>
+    <option>Slurred Speech</option>
+    <option>Knee Pain</option>
+    <option>Hip Joint Pain</option>
+    <option>Muscle Weakness</option>
+    <option>Stiff Neck</option>
+    <option>Swelling Joints</option>
+    <option>Movement Stiffness</option>
+    <option>Spinning Movements</option>
+    <option>Loss Of Balance</option>
+    <option>Unsteadiness</option>
+    <option>Weakness Of One Body Side</option>
+    <option>Loss Of Smell</option>
+    <option>Bladder Discomfort</option>
+    <option>Foul Smell Of Urin</option>
+    <option>Continous Feel Of Urine</option>
+    <option>Passage Of Gases</option>
+    <option>Internal Itching</option>
+    <option>Toxic Look(Typhos)</option>
+    <option>Depression</option>
+    <option>Irritability</option>
+    <option>Muscle Pain</option>
+    <option>Altered Sensorium</option>
+    <option>Red Spots Over Body</option>
+    <option>Belly Pain</option>
+    <option>Dischromic Patches</option>
+    <option>Watering From Eyes</option>
+    <option>Increased Appetite</option>
+    <option>Polyuria</option>
+    <option>Family History</option>
+    <option>Mucoid Sputum</option>
+    <option>Rusty Sputum</option>
+    <option>Lack Of Concentration</option>
+    <option>Visual Disturbances</option>
+    <option>Receiving Unsterile Injections</option>
+    <option>Coma</option>
+    <option>Stomach Bleeding</option>
+    <option>Distention Of Abdomen</option>
+    <option>History Of Alcohal Consumption</option>
+    <option>Fluid Overload.1</option>
+    <option>Blood In Sputum</option>
+    <option>Prominent Veins On Calf</option>
+    <option>Palpitations</option>
+    <option>Painful Walking</option>
+    <option>Pus Filled Pimples</option>
+    <option>Blackheads</option>
+    <option>Scurring</option>
+    <option>Skin Peeling</option>
+    <option>Silver Like Dusting</option>
+    <option>Small Dents In Nails</option>
+    <option>Blister</option>
+    <option>Red Sore Around Nose</option>
+    <option>Yellow Crust Ooze</option>
+</select>
+
+<!-- Multiple select 2 -->
+
+<select name="s2" class="custom-select custom-select-lg mb-3">
+  <option selected>Open this select menu</option>
+    <option>Itching</option>
+    <option>Skin Rash</option>
+    <option>Nodal Skin Eruptions</option>
+    <option>Continuous Sneezing</option>
+    <option>Shivering</option>
+    <option>Chills</option>
+    <option>Joint Pain</option>
+    <option>Stomach Pain</option>
+    <option>Acidity</option>
+    <option>Ulcers On Tongue</option>
+    <option>Muscle Wasting</option>
+    <option>Vomiting</option>
+    <option>Burning Micturution</option>
+    <option>Spotting Urination</option>
+    <option>Fatigue</option>
+    <option>Weight Gain</option>
+    <option>Anxiety</option>
+    <option>Cold Hands and Feets</option>
+    <option>Mood Swings</option>
+    <option>Weight Loss</option>
+    <option>RestlessNess</option>
+    <option>Lethargy</option>
+    <option>Pathes In Throat</option>
+    <option>Irregular Sugar Level</option>
+    <option>Cough</option>
+    <option>High Fever</option>
+    <option>Sunken Eyes</option>
+    <option>Breathelessness</option>
+    <option>Sweating</option>
+    <option>Dehydration</option>
+    <option>Indigestion</option>
+    <option>Headache</option>
+    <option>Yellowish Skin</option>
+    <option>Dark Skin</option>
+    <option>Nausea</option>
+    <option>Loss of Apetite</option>
+    <option>Pain Behind the Eyes</option>
+    <option>Abnormal Menstruation</option>
+    <option>Back Pain</option>
+    <option>Constipation</option>
+    <option>Abdominal Pain</option>
+    <option>Diarrhoea</option>
+    <option>Mild Fever</option>
+    <option>Yellow Urine</option>
+    <option>Yellowing of Eyes</option>
+    <option>Acute Liver Failure</option>
+    <option>Fluid Overload</option>
+    <option>Swelling of Stomach</option>
+    <option>Swelled Lymph Nodes</option>
+    <option>Malaise</option>
+    <option>Blurred and Distorted Vision</option>
+    <option>Phlegm</option>
+    <option>Throat Irritation</option>
+    <option>Redness Of Eyes</option>
+    <option>Sinus Pressure</option>
+    <option>Runny Nose</option>
+    <option>Congestion</option>
+    <option>Chest Pain</option>
+    <option>Weakness in Limbs</option>
+    <option>Fast Heart Rate</option>
+    <option>Pain During Bowel Movements</option>
+    <option>Pain in Anal Region</option>
+    <option>Bloody Stool</option>
+    <option>Irritation In Anus</option>
+    <option>Neck Pain</option>
+    <option>Dizziness</option>
+    <option>Cramps</option>
+    <option>Bruising</option>
+    <option>Obesity</option>
+    <option>Swollen Legs</option>
+    <option>Swollen Blood Vessels</option>
+    <option>Puffy Face and Eyes</option>
+    <option>Enlarged Thyroid</option>
+    <option>Brittle Nails</option>
+    <option>Swollen Extremeties</option>
+    <option>Excessive Hunger</option>
+    <option>Extra Marital Contacts</option>
+    <option>Drying and Tingling Lips</option>
+    <option>Slurred Speech</option>
+    <option>Knee Pain</option>
+    <option>Hip Joint Pain</option>
+    <option>Muscle Weakness</option>
+    <option>Stiff Neck</option>
+    <option>Swelling Joints</option>
+    <option>Movement Stiffness</option>
+    <option>Spinning Movements</option>
+    <option>Loss Of Balance</option>
+    <option>Unsteadiness</option>
+    <option>Weakness Of One Body Side</option>
+    <option>Loss Of Smell</option>
+    <option>Bladder Discomfort</option>
+    <option>Foul Smell Of Urin</option>
+    <option>Continuous Feel Of Urine</option>
+    <option>Passage Of Gases</option>
+    <option>Internal Itching</option>
+    <option>Toxic Look(Typhos)</option>
+    <option>Depression</option>
+    <option>Irritability</option>
+    <option>Muscle Pain</option>
+    <option>Altered Sensorium</option>
+    <option>Red Spots Over Body</option>
+    <option>Belly Pain</option>
+    <option>Dischromic Patches</option>
+    <option>Watering From Eyes</option>
+    <option>Increased Appetite</option>
+    <option>Polyuria</option>
+    <option>Family History</option>
+    <option>Mucoid Sputum</option>
+    <option>Rusty Sputum</option>
+    <option>Lack Of Concentration</option>
+    <option>Visual Disturbances</option>
+    <option>Receiving Unsterile Injections</option>
+    <option>Coma</option>
+    <option>Stomach Bleeding</option>
+    <option>Distention Of Abdomen</option>
+    <option>History Of Alcohal Consumption</option>
+    <option>Fluid Overload.1</option>
+    <option>Blood In Sputum</option>
+    <option>Prominent Veins On Calf</option>
+    <option>Palpitations</option>
+    <option>Painful Walking</option>
+    <option>Pus Filled Pimples</option>
+    <option>Blackheads</option>
+    <option>Scurring</option>
+    <option>Skin Peeling</option>
+    <option>Silver Like Dusting</option>
+    <option>Small Dents In Nails</option>
+    <option>Blister</option>
+    <option>Red Sore Around Nose</option>
+    <option>Yellow Crust Ooze</option>
+</select>
+
+<!-- Multiple Select 3 -->
+<select name="s3" class="custom-select custom-select-lg mb-3">
+  <option selected>Open this select menu</option>
+    <option>Itching</option>
+    <option>Skin Rash</option>
+    <option>Nodal Skin Eruptions</option>
+    <option>Continuous Sneezing</option>
+    <option>Shivering</option>
+    <option>Chills</option>
+    <option>Joint Pain</option>
+    <option>Stomach Pain</option>
+    <option>Acidity</option>
+    <option>Ulcers On Tongue</option>
+    <option>Muscle Wasting</option>
+    <option>Vomiting</option>
+    <option>Burning Micturution</option>
+    <option>Spotting Urination</option>
+    <option>Fatigue</option>
+    <option>Weight Gain</option>
+    <option>Anxiety</option>
+    <option>Cold Hands and Feets</option>
+    <option>Mood Swings</option>
+    <option>Weight Loss</option>
+    <option>RestlessNess</option>
+    <option>Lethargy</option>
+    <option>Pathes In Throat</option>
+    <option>Irregular Sugar Level</option>
+    <option>Cough</option>
+    <option>High Fever</option>
+    <option>Sunken Eyes</option>
+    <option>Breathelessness</option>
+    <option>Sweating</option>
+    <option>Dehydration</option>
+    <option>Indigestion</option>
+    <option>Headache</option>
+    <option>Yellowish Skin</option>
+    <option>Dark Skin</option>
+    <option>Nausea</option>
+    <option>Loss of Apetite</option>
+    <option>Pain Behind the Eyes</option>
+    <option>Abnormal Menstruation</option>
+    <option>Back Pain</option>
+    <option>Constipation</option>
+    <option>Abdominal Pain</option>
+    <option>Diarrhoea</option>
+    <option>Mild Fever</option>
+    <option>Yellow Urine</option>
+    <option>Yellowing of Eyes</option>
+    <option>Acute Liver Failure</option>
+    <option>Fluid Overload</option>
+    <option>Swelling of Stomach</option>
+    <option>Swelled Lymph Nodes</option>
+    <option>Malaise</option>
+    <option>Blurred and Distorted Vision</option>
+    <option>Phlegm</option>
+    <option>Throat Irritation</option>
+    <option>Redness Of Eyes</option>
+    <option>Sinus Pressure</option>
+    <option>Runny Nose</option>
+    <option>Congestion</option>
+    <option>Chest Pain</option>
+    <option>Weakness in Limbs</option>
+    <option>Fast Heart Rate</option>
+    <option>Pain During Bowel Movements</option>
+    <option>Pain in Anal Region</option>
+    <option>Bloody Stool</option>
+    <option>Irritation In Anus</option>
+    <option>Neck Pain</option>
+    <option>Dizziness</option>
+    <option>Cramps</option>
+    <option>Bruising</option>
+    <option>Obesity</option>
+    <option>Swollen Legs</option>
+    <option>Swollen Blood Vessels</option>
+    <option>Puffy Face and Eyes</option>
+    <option>Enlarged Thyroid</option>
+    <option>Brittle Nails</option>
+    <option>Swollen Extremeties</option>
+    <option>Excessive Hunger</option>
+    <option>Extra Marital Contacts</option>
+    <option>Drying and Tingling Lips</option>
+    <option>Slurred Speech</option>
+    <option>Knee Pain</option>
+    <option>Hip Joint Pain</option>
+    <option>Muscle Weakness</option>
+    <option>Stiff Neck</option>
+    <option>Swelling Joints</option>
+    <option>Movement Stiffness</option>
+    <option>Spinning Movements</option>
+    <option>Loss Of Balance</option>
+    <option>Unsteadiness</option>
+    <option>Weakness Of One Body Side</option>
+    <option>Loss Of Smell</option>
+    <option>Bladder Discomfort</option>
+    <option>Foul Smell Of Urin</option>
+    <option>Continuous Feel Of Urine</option>
+    <option>Passage Of Gases</option>
+    <option>Internal Itching</option>
+    <option>Toxic Look(Typhos)</option>
+    <option>Depression</option>
+    <option>Irritability</option>
+    <option>Muscle Pain</option>
+    <option>Altered Sensorium</option>
+    <option>Red Spots Over Body</option>
+    <option>Belly Pain</option>
+    <option>Dischromic Patches</option>
+    <option>Watering From Eyes</option>
+    <option>Increased Appetite</option>
+    <option>Polyuria</option>
+    <option>Family History</option>
+    <option>Mucoid Sputum</option>
+    <option>Rusty Sputum</option>
+    <option>Lack Of Concentration</option>
+    <option>Visual Disturbances</option>
+    <option>Receiving Unsterile Injections</option>
+    <option>Coma</option>
+    <option>Stomach Bleeding</option>
+    <option>Distention Of Abdomen</option>
+    <option>History Of Alcohal Consumption</option>
+    <option>Fluid Overload.1</option>
+    <option>Blood In Sputum</option>
+    <option>Prominent Veins On Calf</option>
+    <option>Palpitations</option>
+    <option>Painful Walking</option>
+    <option>Pus Filled Pimples</option>
+    <option>Blackheads</option>
+    <option>Scurring</option>
+    <option>Skin Peeling</option>
+    <option>Silver Like Dusting</option>
+    <option>Small Dents In Nails</option>
+    <option>Blister</option>
+    <option>Red Sore Around Nose</option>
+    <option>Yellow Crust Ooze</option>
+</select>
+
+
+<!-- Multiple Select 4 -->
+
+<select name="s4" class="custom-select custom-select-lg mb-3">
+  <option selected>Open this select menu</option>
+    <option>Itching</option>
+    <option>Skin Rash</option>
+    <option>Nodal Skin Eruptions</option>
+    <option>Continuous Sneezing</option>
+    <option>Shivering</option>
+    <option>Chills</option>
+    <option>Joint Pain</option>
+    <option>Stomach Pain</option>
+    <option>Acidity</option>
+    <option>Ulcers On Tongue</option>
+    <option>Muscle Wasting</option>
+    <option>Vomiting</option>
+    <option>Burning Micturution</option>
+    <option>Spotting Urination</option>
+    <option>Fatigue</option>
+    <option>Weight Gain</option>
+    <option>Anxiety</option>
+    <option>Cold Hands and Feets</option>
+    <option>Mood Swings</option>
+    <option>Weight Loss</option>
+    <option>RestlessNess</option>
+    <option>Lethargy</option>
+    <option>Pathes In Throat</option>
+    <option>Irregular Sugar Level</option>
+    <option>Cough</option>
+    <option>High Fever</option>
+    <option>Sunken Eyes</option>
+    <option>Breathelessness</option>
+    <option>Sweating</option>
+    <option>Dehydration</option>
+    <option>Indigestion</option>
+    <option>Headache</option>
+    <option>Yellowish Skin</option>
+    <option>Dark Skin</option>
+    <option>Nausea</option>
+    <option>Loss of Apetite</option>
+    <option>Pain Behind the Eyes</option>
+    <option>Abnormal Menstruation</option>
+    <option>Back Pain</option>
+    <option>Constipation</option>
+    <option>Abdominal Pain</option>
+    <option>Diarrhoea</option>
+    <option>Mild Fever</option>
+    <option>Yellow Urine</option>
+    <option>Yellowing of Eyes</option>
+    <option>Acute Liver Failure</option>
+    <option>Fluid Overload</option>
+    <option>Swelling of Stomach</option>
+    <option>Swelled Lymph Nodes</option>
+    <option>Malaise</option>
+    <option>Blurred and Distorted Vision</option>
+    <option>Phlegm</option>
+    <option>Throat Irritation</option>
+    <option>Redness Of Eyes</option>
+    <option>Sinus Pressure</option>
+    <option>Runny Nose</option>
+    <option>Congestion</option>
+    <option>Chest Pain</option>
+    <option>Weakness in Limbs</option>
+    <option>Fast Heart Rate</option>
+    <option>Pain During Bowel Movements</option>
+    <option>Pain in Anal Region</option>
+    <option>Bloody Stool</option>
+    <option>Irritation In Anus</option>
+    <option>Neck Pain</option>
+    <option>Dizziness</option>
+    <option>Cramps</option>
+    <option>Bruising</option>
+    <option>Obesity</option>
+    <option>Swollen Legs</option>
+    <option>Swollen Blood Vessels</option>
+    <option>Puffy Face and Eyes</option>
+    <option>Enlarged Thyroid</option>
+    <option>Brittle Nails</option>
+    <option>Swollen Extremeties</option>
+    <option>Excessive Hunger</option>
+    <option>Extra Marital Contacts</option>
+    <option>Drying and Tingling Lips</option>
+    <option>Slurred Speech</option>
+    <option>Knee Pain</option>
+    <option>Hip Joint Pain</option>
+    <option>Muscle Weakness</option>
+    <option>Stiff Neck</option>
+    <option>Swelling Joints</option>
+    <option>Movement Stiffness</option>
+    <option>Spinning Movements</option>
+    <option>Loss Of Balance</option>
+    <option>Unsteadiness</option>
+    <option>Weakness Of One Body Side</option>
+    <option>Loss Of Smell</option>
+    <option>Bladder Discomfort</option>
+    <option>Foul Smell Of Urin</option>
+    <option>Continuous Feel Of Urine</option>
+    <option>Passage Of Gases</option>
+    <option>Internal Itching</option>
+    <option>Toxic Look(Typhos)</option>
+    <option>Depression</option>
+    <option>Irritability</option>
+    <option>Muscle Pain</option>
+    <option>Altered Sensorium</option>
+    <option>Red Spots Over Body</option>
+    <option>Belly Pain</option>
+    <option>Dischromic Patches</option>
+    <option>Watering From Eyes</option>
+    <option>Increased Appetite</option>
+    <option>Polyuria</option>
+    <option>Family History</option>
+    <option>Mucoid Sputum</option>
+    <option>Rusty Sputum</option>
+    <option>Lack Of Concentration</option>
+    <option>Visual Disturbances</option>
+    <option>Receiving Unsterile Injections</option>
+    <option>Coma</option>
+    <option>Stomach Bleeding</option>
+    <option>Distention Of Abdomen</option>
+    <option>History Of Alcohal Consumption</option>
+    <option>Fluid Overload.1</option>
+    <option>Blood In Sputum</option>
+    <option>Prominent Veins On Calf</option>
+    <option>Palpitations</option>
+    <option>Painful Walking</option>
+    <option>Pus Filled Pimples</option>
+    <option>Blackheads</option>
+    <option>Scurring</option>
+    <option>Skin Peeling</option>
+    <option>Silver Like Dusting</option>
+    <option>Small Dents In Nails</option>
+    <option>Blister</option>
+    <option>Red Sore Around Nose</option>
+    <option>Yellow Crust Ooze</option>
+</select>
+
+<!-- Multiple Select 5 -->
+<select name="s5" class="custom-select custom-select-lg mb-3">
+  <option selected>Open this select menu</option>
+    <option>Itching</option>
+    <option>Skin Rash</option>
+    <option>Nodal Skin Eruptions</option>
+    <option>Continuous Sneezing</option>
+    <option>Shivering</option>
+    <option>Chills</option>
+    <option>Joint Pain</option>
+    <option>Stomach Pain</option>
+    <option>Acidity</option>
+    <option>Ulcers On Tongue</option>
+    <option>Muscle Wasting</option>
+    <option>Vomiting</option>
+    <option>Burning Micturution</option>
+    <option>Spotting Urination</option>
+    <option>Fatigue</option>
+    <option>Weight Gain</option>
+    <option>Anxiety</option>
+    <option>Cold Hands and Feets</option>
+    <option>Mood Swings</option>
+    <option>Weight Loss</option>
+    <option>RestlessNess</option>
+    <option>Lethargy</option>
+    <option>Pathes In Throat</option>
+    <option>Irregular Sugar Level</option>
+    <option>Cough</option>
+    <option>High Fever</option>
+    <option>Sunken Eyes</option>
+    <option>Breathelessness</option>
+    <option>Sweating</option>
+    <option>Dehydration</option>
+    <option>Indigestion</option>
+    <option>Headache</option>
+    <option>Yellowish Skin</option>
+    <option>Dark Skin</option>
+    <option>Nausea</option>
+    <option>Loss of Apetite</option>
+    <option>Pain Behind the Eyes</option>
+    <option>Abnormal Menstruation</option>
+    <option>Back Pain</option>
+    <option>Constipation</option>
+    <option>Abdominal Pain</option>
+    <option>Diarrhoea</option>
+    <option>Mild Fever</option>
+    <option>Yellow Urine</option>
+    <option>Yellowing of Eyes</option>
+    <option>Acute Liver Failure</option>
+    <option>Fluid Overload</option>
+    <option>Swelling of Stomach</option>
+    <option>Swelled Lymph Nodes</option>
+    <option>Malaise</option>
+    <option>Blurred and Distorted Vision</option>
+    <option>Phlegm</option>
+    <option>Throat Irritation</option>
+    <option>Redness Of Eyes</option>
+    <option>Sinus Pressure</option>
+    <option>Runny Nose</option>
+    <option>Congestion</option>
+    <option>Chest Pain</option>
+    <option>Weakness in Limbs</option>
+    <option>Fast Heart Rate</option>
+    <option>Pain During Bowel Movements</option>
+    <option>Pain in Anal Region</option>
+    <option>Bloody Stool</option>
+    <option>Irritation In Anus</option>
+    <option>Neck Pain</option>
+    <option>Dizziness</option>
+    <option>Cramps</option>
+    <option>Bruising</option>
+    <option>Obesity</option>
+    <option>Swollen Legs</option>
+    <option>Swollen Blood Vessels</option>
+    <option>Puffy Face and Eyes</option>
+    <option>Enlarged Thyroid</option>
+    <option>Brittle Nails</option>
+    <option>Swollen Extremeties</option>
+    <option>Excessive Hunger</option>
+    <option>Extra Marital Contacts</option>
+    <option>Drying and Tingling Lips</option>
+    <option>Slurred Speech</option>
+    <option>Knee Pain</option>
+    <option>Hip Joint Pain</option>
+    <option>Muscle Weakness</option>
+    <option>Stiff Neck</option>
+    <option>Swelling Joints</option>
+    <option>Movement Stiffness</option>
+    <option>Spinning Movements</option>
+    <option>Loss Of Balance</option>
+    <option>Unsteadiness</option>
+    <option>Weakness Of One Body Side</option>
+    <option>Loss Of Smell</option>
+    <option>Bladder Discomfort</option>
+    <option>Foul Smell Of Urin</option>
+    <option>Continuous Feel Of Urine</option>
+    <option>Passage Of Gases</option>
+    <option>Internal Itching</option>
+    <option>Toxic Look(Typhos)</option>
+    <option>Depression</option>
+    <option>Irritability</option>
+    <option>Muscle Pain</option>
+    <option>Altered Sensorium</option>
+    <option>Red Spots Over Body</option>
+    <option>Belly Pain</option>
+    <option>Dischromic Patches</option>
+    <option>Watering From Eyes</option>
+    <option>Increased Appetite</option>
+    <option>Polyuria</option>
+    <option>Family History</option>
+    <option>Mucoid Sputum</option>
+    <option>Rusty Sputum</option>
+    <option>Lack Of Concentration</option>
+    <option>Visual Disturbances</option>
+    <option>Receiving Unsterile Injections</option>
+    <option>Coma</option>
+    <option>Stomach Bleeding</option>
+    <option>Distention Of Abdomen</option>
+    <option>History Of Alcohal Consumption</option>
+    <option>Fluid Overload.1</option>
+    <option>Blood In Sputum</option>
+    <option>Prominent Veins On Calf</option>
+    <option>Palpitations</option>
+    <option>Painful Walking</option>
+    <option>Pus Filled Pimples</option>
+    <option>Blackheads</option>
+    <option>Scurring</option>
+    <option>Skin Peeling</option>
+    <option>Silver Like Dusting</option>
+    <option>Small Dents In Nails</option>
+    <option>Blister</option>
+    <option>Red Sore Around Nose</option>
+    <option>Yellow Crust Ooze</option>
+</select>
+
+
+     <br>
+     <input type="submit" class="btn btn-outline-success" value="submit"></button>
+
+   </form>
+</div>
+
+  </body>
+</html>
